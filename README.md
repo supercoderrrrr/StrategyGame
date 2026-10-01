@@ -15,6 +15,7 @@ StrategyGame is a squad-based, turn-based tactics prototype developed in Unity. 
 ### Technical highlights
 
 - **Utility-based tactical AI:** score offense, survival, and positioning; tune decision weights through ScriptableObject profiles. A bounded, depth-two beam planner estimates follow-up actions when the action-point budget permits, executes the first step, then replans.
+- **Enemy alert and chain propagation:** proximity or damage alerts an enemy, which recursively alerts nearby enemies within a configurable grid-distance threshold, skipping units hidden by fog. Only alerted enemies outside fog participate in AI turns; alert-state events update their ground markers.
 - **Budget-aware movement fields:** one bounded Dijkstra search produces reachable tiles, weighted movement costs, and a path reconstruction tree. Reusable flat arrays, a decrease-key binary min-heap, and topology/occupancy-versioned caching support repeated tactical queries.
 - **Reactive battlefield:** water movement costs, grass concealment, fire hazards, doors, and destructible crates interact with movement and action selection.
 - **Readable combat presentation:** selected-unit camera focus, local noise-dissolve wall cutouts that preserve shadows, impact feedback, and room fog that dissolves after a unit finishes moving.
@@ -58,6 +59,7 @@ A local, animated cutout reveals the selected unit without hiding the entire wal
 | Movement search | [TacticalMovementField](Assets/Scripts/TacticalMovementField.cs) | Budgeted search, binary heap, parent tree, field cache |
 | Dynamic grid | [PathFinding](Assets/Scripts/PathFinding.cs), [LevelGrid](Assets/Scripts/Grid/LevelGrid.cs) | Terrain, blockers, state versions, influence maps |
 | Tactical planner | [TacticalPlanner](Assets/Scripts/TacticalPlanner.cs), [TacticalAIProfile](Assets/Scripts/TacticalAIProfile.cs) | Bounded beam search, profiles, per-action replanning |
+| Alert propagation | [Unit](Assets/Scripts/Unit.cs), [EnemyAI](Assets/Scripts/EnemyAI.cs), [UnitSelectedVisual](Assets/Scripts/UnitSelectedVisual.cs) | Proximity/damage triggers, recursive alerts, AI activation, ground markers |
 | Action scoring | [MoveAction](Assets/Scripts/Actions/MoveAction.cs), [EnemyAIAction](Assets/Scripts/EnemyAIAction.cs) | Offense, survival, and positioning scores |
 | Wall visibility | [CameraOcclusionDissolver](Assets/Scripts/CameraOcclusionDissolver.cs), [wall shader](Assets/Resources/Shaders/TacticalWallDissolve.shader) | Occlusion detection, local cutouts, preserved shadows |
 | Room fog | [RoomTrigger](Assets/Scripts/RoomTrigger.cs), [Room](Assets/Scripts/Room.cs), [fog shader](Assets/Resources/Shaders/FogOfWarDissolve.shader) | Movement-completion event and noise dissolve |
@@ -93,6 +95,7 @@ The `legacy-import` tag marks a real import of an existing project previously ma
 ### 技术亮点
 
 - **战术决策**：Utility AI 按进攻、生存、站位分项评分，使用 ScriptableObject 配置不同决策风格；在行动点允许时，通过有界二层 Beam Search 估计后续行动，执行首步后重新规划。
+- **敌人警觉与连锁警觉**：玩家接近或敌人受到伤害时触发警觉，再按可配置的网格距离向附近敌人递归传播，跳过迷雾中的单位。只有已警觉且不在迷雾中的敌人才参与 AI 回合行动；警觉状态事件同步更新地面标识。
 - **动态路径规划**：有界 Dijkstra 一次构建可达范围、带权移动成本与路径父树；复用扁平数组和支持 decrease-key 的二叉最小堆，通过拓扑与占用版本管理范围场缓存。
 - **战场交互**：水面移动代价、草地隐蔽、火焰危险、门与可破坏箱体参与移动和行动选择。
 - **战场呈现**：选中单位镜头聚焦、保留投影的局部墙体噪波溶解、攻击命中反馈，以及角色移动结束后触发的房间迷雾消散。
@@ -117,6 +120,7 @@ The `legacy-import` tag marks a real import of an existing project previously ma
 | 搜索核心 | [TacticalMovementField](Assets/Scripts/TacticalMovementField.cs) | 预算搜索、二叉堆、父树与范围场缓存 |
 | 动态状态 | [PathFinding](Assets/Scripts/PathFinding.cs)、[LevelGrid](Assets/Scripts/Grid/LevelGrid.cs) | 地形与障碍、占用/拓扑版本、影响力图 |
 | AI 规划 | [TacticalPlanner](Assets/Scripts/TacticalPlanner.cs)、[TacticalAIProfile](Assets/Scripts/TacticalAIProfile.cs) | 二层候选搜索、权重配置、每步重规划 |
+| 警觉与连锁传播 | [Unit](Assets/Scripts/Unit.cs)、[EnemyAI](Assets/Scripts/EnemyAI.cs)、[UnitSelectedVisual](Assets/Scripts/UnitSelectedVisual.cs) | 接近/受伤触发、递归传播、AI 激活与地面标识 |
 | 行动评分 | [MoveAction](Assets/Scripts/Actions/MoveAction.cs)、[EnemyAIAction](Assets/Scripts/EnemyAIAction.cs) | 进攻、生存与站位分项 |
 | 墙体遮挡 | [CameraOcclusionDissolver](Assets/Scripts/CameraOcclusionDissolver.cs)、[Shader](Assets/Resources/Shaders/TacticalWallDissolve.shader) | 遮挡检测、局部切口与独立投影 |
 | 房间迷雾 | [RoomTrigger](Assets/Scripts/RoomTrigger.cs)、[Room](Assets/Scripts/Room.cs)、[Shader](Assets/Resources/Shaders/FogOfWarDissolve.shader) | 移动完成事件与噪波消散 |

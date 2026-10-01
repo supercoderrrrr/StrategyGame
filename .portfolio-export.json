@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "scope": "core source, documentation and gameplay screenshots; third-party source assets and playable scenes excluded",
   "digestScope": "source working-tree bytes before Git line-ending normalization",
-  "sourceRevision": "5298e59264376d1fe55e0f23e5cc4077faf534df",
+  "sourceRevision": "8e4ef877e322eaabff38cf2cf4d9df723e2d2bcf",
   "files": [
     {
       "path": ".gitattributes",
@@ -726,7 +726,7 @@
     },
     {
       "path": "README.md",
-      "sourceSha256": "529ecc0fb4e6caff53e3c7865a114c2395f0063ee8fc3e59aa5cacb23e58c7ec"
+      "sourceSha256": "75b1b3950e12df4aa18144c244e0310c600102ac69254b901fb6bb1ddda5d333"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
