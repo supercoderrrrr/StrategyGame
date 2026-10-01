@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "scope": "source-only portfolio; third-party resources and playable scenes excluded",
   "digestScope": "source working-tree bytes before Git line-ending normalization",
-  "sourceRevision": null,
+  "sourceRevision": "9dd064a1acdb1fe789b9605c3df42cbab16cd1c0",
   "files": [
     {
       "path": ".gitattributes",
