@@ -15,7 +15,7 @@ public class Unit : MonoBehaviour
     [SerializeField] private bool isEngaged = false;
     [SerializeField] private int detectionRange = 5; //For enemy to detect player incoming
     [SerializeField] private int chainReactionRange = 7; //Chain reaction between enemies
-    [SerializeField] private int maxActionPoints = 2;
+    [SerializeField] private int maxActionPoints = 3;
     [SerializeField] private TacticalAIProfile tacticalAIProfile;
 
     [Header("Unit Info")]

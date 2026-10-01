@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
-  "scope": "source-only portfolio; third-party resources and playable scenes excluded",
+  "scope": "core source, documentation and gameplay screenshots; third-party source assets and playable scenes excluded",
   "digestScope": "source working-tree bytes before Git line-ending normalization",
-  "sourceRevision": "07f505e8831c948895e115a580aa09d4fa1fae0f",
+  "sourceRevision": "5298e59264376d1fe55e0f23e5cc4077faf534df",
   "files": [
     {
       "path": ".gitattributes",
@@ -10,7 +10,7 @@
     },
     {
       "path": ".gitignore",
-      "sourceSha256": "b27634081e8092689ec032e9e6052dd742a415e235248cb3efdb23567bb3d15f"
+      "sourceSha256": "8136cc5bb38a237517ed2a6d84b36b1e689091b38a404e54ef07caad3792f891"
     },
     {
       "path": "Assets/PlayerInputActions.cs",
@@ -614,7 +614,7 @@
     },
     {
       "path": "Assets/Scripts/Unit.cs",
-      "sourceSha256": "fa531056e67ec64e6d4bebd9cfe32b7129c032923e6a71ea1c6bcd60acaa0376"
+      "sourceSha256": "9e551adbac51c909f5036d42dae75eb34b34353e2189b5b1af330fe92ec32a50"
     },
     {
       "path": "Assets/Scripts/Unit.cs.meta",
@@ -685,6 +685,30 @@
       "sourceSha256": "8fdc57619cc5086790dda815c0e2ff53eaa1f17e2db2b19cdc42f3905fa65109"
     },
     {
+      "path": "docs/media/fireball-impact.jpg",
+      "sourceSha256": "d560863819f734fb042b29e486c7fdf6205c23784d6e0c44cf97e00b32a5d852"
+    },
+    {
+      "path": "docs/media/fog-before.jpg",
+      "sourceSha256": "8fc3b16bce68b211b80d463cbbd9b3bca821225212e5ef6f0b3d14d5c768f176"
+    },
+    {
+      "path": "docs/media/fog-reveal.jpg",
+      "sourceSha256": "6d887f5580a405c095de1bd948037ee617997ec1f49f33a57c774c0c93a28982"
+    },
+    {
+      "path": "docs/media/movement-range.jpg",
+      "sourceSha256": "09fdffa09ca5044ce924272096e251a66c39f8a17f706b8996029931a609e709"
+    },
+    {
+      "path": "docs/media/tactical-ai.jpg",
+      "sourceSha256": "378548e319f9264ce90d9567aa44b56df967b8f7b594350ec358b752365aeccb"
+    },
+    {
+      "path": "docs/media/wall-cutout.jpg",
+      "sourceSha256": "d3bb5f94fdeee5b71809ac2be21ee165d865d1765db087d73cb025106a1b3136"
+    },
+    {
       "path": "docs/RELEASE.md",
       "sourceSha256": "af48794c97a85c833832423cc82ac596ace07e7b916a246e3206888c6a0b115c"
     },
@@ -702,11 +726,11 @@
     },
     {
       "path": "README.md",
-      "sourceSha256": "cea2bbaddabfb58f84e48f46f3670d09874b25ff342516fddee401f667af1797"
+      "sourceSha256": "529ecc0fb4e6caff53e3c7865a114c2395f0063ee8fc3e59aa5cacb23e58c7ec"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "sourceSha256": "c2542e715d30772cb478e015fe2e29be76a617eff6c9dbc222ad9f7100b1b1f0"
+      "sourceSha256": "d0a9f2fe3cd9fe0a91bcdbe1ad2af5101ab23159d750e244a50154bc2ee783bc"
     }
   ]
 }
