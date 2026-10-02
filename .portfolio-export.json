@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "scope": "core source, documentation and gameplay screenshots; third-party source assets and playable scenes excluded",
   "digestScope": "source working-tree bytes before Git line-ending normalization",
-  "sourceRevision": "8e4ef877e322eaabff38cf2cf4d9df723e2d2bcf",
+  "sourceRevision": "a41c50390b6dc5b12991c493f377940a3e083b4d",
   "files": [
     {
       "path": ".gitattributes",
@@ -678,7 +678,7 @@
     },
     {
       "path": "DEVELOPMENT.md",
-      "sourceSha256": "e358836803bed1550142e09df9157f8f9473b97280dda8449ad2ae45337a9efc"
+      "sourceSha256": "e8f071d923035c2666d553e3938857ae7ba0bb70583656406b7e52db70f37c39"
     },
     {
       "path": "docs/ARCHITECTURE.md",
