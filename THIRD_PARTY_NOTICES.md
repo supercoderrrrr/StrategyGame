@@ -2,6 +2,12 @@
 
 项目使用第三方模型、动画、材质、特效及 Unity 包。游戏系统与资源来源分别展示；这些素材不作为原创美术成果声明。
 
+## Learning reference / 学习参考
+
+Part of the project's early grid and action framework was developed while learning from [Unity Turn-Based Strategy Game: Intermediate C# Coding](https://www.udemy.com/course/unity-turn-based-strategy/) by Hugo Cardoso (Code Monkey) and GameDev.tv ([official course website](https://gamedev.tv/courses/unity-turn-based-strategy)). Subsequent work extended and refactored the project with bounded Dijkstra movement fields, two-step tactical planning, enemy alert propagation, and environmental interactions and visual effects.
+
+本项目早期的部分网格与动作框架参考学习了 Hugo Cardoso（Code Monkey）与 GameDev.tv 的上述课程。后续在此基础上扩展并重构了有界 Dijkstra 移动范围场、二层战术规划、敌人警觉与连锁警觉，以及环境交互与视觉效果。
+
 ## 仓库边界
 
 公开作品集排除以下第三方资源目录及其 `.meta`。完整私有工程保留资源原有文件。现有场景、预制体和材质依赖这些资源，因此也不包含在公开源码导出中。
